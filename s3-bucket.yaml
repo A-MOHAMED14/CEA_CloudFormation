@@ -1,0 +1,12 @@
+# Creating an S3 Bucket using AWS CloudFormation
+
+# CloudFormationTemplateVersion
+# Description
+
+AWSTemplateFormatVersion: "2010-09-09"
+Description: "CloudFormation Template for S3 Bucket"
+Resources:
+  S3Bucket:
+    Type: "AWS::S3::Bucket"
+    Properties:
+      BucketName: "amin-s3-bucket-yaml"
