@@ -1,6 +1,8 @@
 AWSTemplateFormatVersion: "2010-09-09"
 Description: "CloudFormation Template for VPC"
+
 Resources:
+  # VPC
   MyVPC:
     Type: "AWS::EC2::VPC"
     Properties:
@@ -10,3 +12,14 @@ Resources:
       Tags:
         - Key: Name
           Value: MyVPC
+  # Public Subnet 1
+  PublicSubnet1A:
+    Type: "AWS::EC2::Subnet"
+    Properties:
+      VpcId: !Ref MyVPC
+      CidrBlock: "172.16.1.0/24"
+      AvailbilityZones: !Select [0, !GetsAZs ""]
+      MapPublicIpOnLaunch: true
+      Tags:
+        - Key: Name
+          Value: PublicSubnet1A
