@@ -80,3 +80,18 @@ Resources:
       Tags:
         - Key: Name
           Value: DataPrivateSubnet2A
+
+  # Internet Gateway
+  InternetGateway:
+    Type: "AWS::EC2::InternetGateway"
+    Properties:
+      Tags:
+        - Key: Name
+          Value: MyVPC-IGW
+
+  # Attach IGW to the VPC
+  AttachGateway:
+    Type: "AWS::EC2::VPCGatewayAttachment"
+    Properties:
+      InternetGatewayId: !Ref InternetGateway
+      VpcId: !Ref MyVPC
