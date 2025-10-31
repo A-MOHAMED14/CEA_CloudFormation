@@ -181,3 +181,27 @@ Resources:
       Tags:
         - Key: Name
           Value: PrivateAppInstance2A
+
+  # Private App Instance Security Group 1A
+  PrivateAppInstance1ASG:
+    Type: "AWS::EC2::SecurityGroup"
+    Properties:
+      GroupDescription: "Allow SSH from Bastion Host"
+      VpcId: !Ref MyVPC
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          SourceSecurityGroupId: !Ref BastionSG
+
+  # Private App Instance Security Group 2A
+  PrivateAppInstance2ASG:
+    Type: "AWS::EC2::SecurityGroup"
+    Properties:
+      GroupDescription: "Allow ICMP Ping from App 1A"
+      VpcId: !Ref MyVPC
+      SecurityGroupIngress:
+        - IpProtocol: icmp
+          FromPort: -1
+          ToPort: -1
+          SourceSecurityGroupId: !Ref PrivateAppInstance1ASG
