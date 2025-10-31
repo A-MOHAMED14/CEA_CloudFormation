@@ -153,3 +153,31 @@ Resources:
           FromPort: 22
           ToPort: 22
           CidrIp: 185.190.198.232/32
+
+  # Private App Instance 1A
+  PrivateAppInstance1A:
+    Type: "AWS::EC2::Instance"
+    Properties:
+      InstanceType: t2.micro
+      ImageId: ami-024294779773cf91a
+      KeyName: bastion
+      SubnetId: !Ref AppPrivateSubnet1A
+      SecurityGroupIds:
+        - !Ref PrivateAppInstance1ASG
+      Tags:
+        - Key: Name
+          Value: PrivateAppInstance1A
+
+  # Private App Instance 2A
+  PrivateAppInstance2A:
+    Type: "AWS::EC2::Instance"
+    Properties:
+      InstanceType: t2.micro
+      ImageId: ami-024294779773cf91a
+      KeyName: bastion
+      SubnetId: AppPrivateSubnet2A
+      SecurityGroupIds:
+        - !Ref PrivateAppInstance2ASG
+      Tags:
+        - Key: Name
+          Value: PrivateAppInstance2A
