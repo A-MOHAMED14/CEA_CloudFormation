@@ -175,7 +175,7 @@ Resources:
       InstanceType: t2.micro
       ImageId: ami-024294779773cf91a
       KeyName: bastion
-      SubnetId: AppPrivateSubnet2A
+      SubnetId: !Ref AppPrivateSubnet2A
       SecurityGroupIds:
         - !Ref PrivateAppInstance2ASG
       Tags:
