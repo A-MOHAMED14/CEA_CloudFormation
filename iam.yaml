@@ -9,3 +9,17 @@ Resources:
       UserName: "AminCF"
       ManagedPolicyArns:
         - "arn:aws:iam::aws:policy/AdministratorAccess"
+
+  # My IAM Group
+  MyIAMGroup:
+    Type: "AWS::IAM::Group"
+    Properties:
+      GroupName: "AminGroup"
+
+  # Attach IAM User to Group
+  AttachUserToGroup:
+    Type: "AWS::IAM::UserToGroupAddition"
+    Properties:
+      GroupName: !Ref MyIAMGroup
+      Users:
+        - !Ref MyIAMUser
