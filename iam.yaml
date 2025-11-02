@@ -1,5 +1,5 @@
 AWSTemplateFormatVersion: "2010-09-09"
-Description: "CloudFormation Template for IAM User"
+Description: "IAM CloudFormation Template"
 
 Resources:
   # My IAM User
@@ -16,8 +16,8 @@ Resources:
     Properties:
       GroupName: "AminGroup"
 
-  # Attach IAM User to Group
-  AttachUserToGroup:
+  # Add IAM User to Group
+  AddUserToGroup:
     Type: "AWS::IAM::UserToGroupAddition"
     Properties:
       GroupName: !Ref MyIAMGroup
