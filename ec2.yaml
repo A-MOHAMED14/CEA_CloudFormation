@@ -145,3 +145,14 @@ Resources:
       VpcId: !Ref MyVPC
       Port: 80
       Protocol: "HTTP"
+
+  # Listener for ALB
+  MyListner:
+    Type: "AWS::ElasticLoadBalancingV2::Listener"
+    Properties:
+      DefaultAction:
+        - Type: "forward"
+          TargetGroupArn: !Ref MyTargetGroup
+      LoadBalancerArn: !Ref MyLoadBalancer
+      Port: 80
+      Protocol: "HTTP"
