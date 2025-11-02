@@ -150,7 +150,7 @@ Resources:
   MyListener:
     Type: "AWS::ElasticLoadBalancingV2::Listener"
     Properties:
-      DefaultAction:
+      DefaultActions:
         - Type: "forward"
           TargetGroupArn: !Ref MyTargetGroup
       LoadBalancerArn: !Ref MyLoadBalancer
