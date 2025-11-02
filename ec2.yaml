@@ -147,7 +147,7 @@ Resources:
       Protocol: "HTTP"
 
   # Listener for ALB
-  MyListner:
+  MyListener:
     Type: "AWS::ElasticLoadBalancingV2::Listener"
     Properties:
       DefaultAction:
