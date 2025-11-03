@@ -174,7 +174,7 @@ Resources:
     Properties:
       AlarmDescription: "Trigger alarm when CPU usage exceeds 70%"
       MetricName: "CPUUtilization"
-      NameSpace: "AWS/EC2"
+      Namespace: "AWS/EC2"
       Statistic: Average
       Period: 300
       EvaluationPeriods: 1
