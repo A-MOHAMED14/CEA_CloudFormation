@@ -158,12 +158,12 @@ Resources:
 
   # Auto Scaling Group
   MyAutoScalingGroup:
-  Type: "AWS::AutoScaling::AutoScalingGroup"
-  Properties:
-    LaunchConfigurationName: !Ref LaunchConfigTemplate
-    MinSize: "1"
-    MaxSize: "3"
-    DesireCapacity: "2"
-    VPCZoneIdentifier:
-      - !Ref PublicSubnet1A
-      - !Ref PublicSubnet2A
+    Type: "AWS::AutoScaling::AutoScalingGroup"
+    Properties:
+      LaunchConfigurationName: !Ref LaunchConfigTemplate
+      MinSize: "1"
+      MaxSize: "3"
+      DesireCapacity: "2"
+      VPCZoneIdentifier:
+        - !Ref PublicSubnet1A
+        - !Ref PublicSubnet2A
