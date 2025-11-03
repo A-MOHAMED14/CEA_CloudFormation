@@ -163,7 +163,7 @@ Resources:
       LaunchConfigurationName: !Ref LaunchConfigTemplate
       MinSize: "1"
       MaxSize: "3"
-      DesireCapacity: "2"
+      DesiredCapacity: "2"
       VPCZoneIdentifier:
         - !Ref PublicSubnet1A
         - !Ref PublicSubnet2A
@@ -193,5 +193,5 @@ Resources:
       AutoScalingGroupName: !Ref MyAutoScalingGroup
       PolicyType: SimpleScaling
       ScalingAdjustment: 1
-      CoolDown: 300
+      Cooldown: 300
       AdjustmentType: ChangeInCapacity
