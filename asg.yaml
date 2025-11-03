@@ -177,7 +177,7 @@ Resources:
       NameSpace: "AWS/EC2"
       Statistic: Average
       Period: 300
-      EvaluationPeriod: 1
+      EvaluationPeriods: 1
       Threshold: 70
       ComparisonOperator: GreaterThanThreshold
       Dimensions:
@@ -188,7 +188,7 @@ Resources:
 
   # Scale Out Policy
   ScaleOutPolicy:
-    Type: "AWS::AutoScaling:ScalingPolicy"
+    Type: "AWS::AutoScaling::ScalingPolicy"
     Properties:
       AutoScalingGroupName: !Ref MyAutoScalingGroup
       PolicyType: SimpleScaling
