@@ -8,3 +8,5 @@ Resources:
       BucketName: "my-static-website-am"
       WebsiteConfiguration:
         IndexDocument: "index.html"
+      PublicAccessBlockConfiguration:
+        RestrictPublicBuckets: false
